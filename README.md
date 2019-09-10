@@ -1,2 +1,0 @@
-# pcc
-PriceCheck Checker

@@ -35,11 +35,8 @@ class ArrayFormatter
         }
         
         // To deal with the last number, a bit ugly...
-        if (max($diff) != $max) {
+        if (max($diff) != $max || (substr($output, strrpos($output, ',')+1) != max($diff))) {
             $output .= '-'.max($diff);
-        }
-        elseif(substr($output, strrpos($output, ',')+1) != max($diff)) {
-            $output .= '-'.max($diff);   
         }
 
         return $output;

@@ -58,6 +58,12 @@ With CURL:
 
 `curl -X POST -d "{\"input\": [1,3,5,8,15,17]}" -H "Content-type: application/json" http://localhost:9000/api/filter`
 
+### Tests
+
+To run the tests:
+
+`vendor/bin/phpunit`
+
 ### UI
 
 The react client is incomplete but you can build the image with:

@@ -1,6 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PriceCheck Array API filter test
 
-## Available Scripts
+### Setup
+
+Clone this repo:
+
+`git clone https://github.com/johandeklerk/pcc`
+
+
 
 In the project directory, you can run:
 

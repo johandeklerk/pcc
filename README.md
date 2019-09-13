@@ -12,6 +12,8 @@ There are 2 directories, `api` and `client`
 
 docker-compose must be installed then:
 
+Make sure you in the "api" directory:
+
 `docker-compose up -d`
 
 Assuming php, composer and yarn is installed on your local system:
@@ -34,13 +36,17 @@ Set the Content-Type: application/json header
 
 Post JSON string:
 
-`{"input": [1,3,5,8,15,17]}`
+`{"input": [1,3,5,8,15,17,25]}`
 
 The API will return either an error message or a result eg:
 
 `{
     "error": "Input array may not contain numbers bigger than 20"
 }`
+
+Or:
+
+`{"input": [1,3,5,8,15,17]}`
 
 `{
     "result": "2,4,6-7,9-14,16,18-20"

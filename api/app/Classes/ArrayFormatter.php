@@ -31,7 +31,7 @@ class ArrayFormatter
                 }
             }
         }
-
-        return $output .= '-'.max($diff);
+        
+        return max($diff) < $max ? $output .= ','.$max : $output .= '-'.$max;
     }
 }

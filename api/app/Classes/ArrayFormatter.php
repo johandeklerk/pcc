@@ -15,6 +15,8 @@ class ArrayFormatter
         $diff = array_values(array_diff(range($min, $max), $input));
         $output = '';
 
+        print_r($diff);
+
         // Basic logic for formatting
         foreach ($diff as $key => $val) {
             if ($key == 0) {
@@ -26,12 +28,19 @@ class ArrayFormatter
                 $output .= ','.$val;
             }
             else {
+                // Check if next value exists and if the next value does not equal one more than the current
+                // then output the "-value" string
                 if (isset($diff[$key+1]) && $diff[$key+1] != ($val + 1)) {
                     $output .= '-'.$val;
                 }
             }
         }
         
-        return max($diff) < $max ? $output .= ','.$max : $output .= '-'.$max;
+        // To deal with the last number, a bit ugly...
+        if (max($diff) == $max-1) {
+            $output .= '-'.max($diff);
+        }
+
+        return $output;
     }
 }

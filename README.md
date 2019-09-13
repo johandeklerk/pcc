@@ -60,4 +60,6 @@ With CURL:
 
 ### UI
 
+The react client is incomplete but you can build the image with:
+
 `docker build . -t pcc/client`

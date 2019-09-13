@@ -36909,7 +36909,21 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 $("#submit").click(function () {
-  alert('hello');
+  var jsonStr = $("#json-str").val();
+  $.ajax({
+    type: "POST",
+    url: "/api/filter",
+    data: jsonStr,
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function success(data) {
+      $("#result").text(JSON.stringify(data));
+    },
+    failure: function failure(errMsg) {
+      console.log(data);
+      alert(errMsg);
+    }
+  });
 });
 
 /***/ }),

@@ -1,13 +1,13 @@
 version: '3'
-services:
 
-  #PHP Service
+services:
+  
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: digitalocean.com/php
-    container_name: app
+    image: pcc/php
+    container_name: pcc-app
     restart: unless-stopped
     tty: true
     environment:
@@ -20,10 +20,9 @@ services:
     networks:
       - app-network
 
-  #Nginx Service
   webserver:
     image: nginx:alpine
-    container_name: webserver
+    container_name: pcc-webserver
     restart: unless-stopped
     tty: true
     ports:
@@ -35,10 +34,9 @@ services:
     networks:
       - app-network
 
-  #MySQL Service
   db:
     image: mysql:5.7.22
-    container_name: db
+    container_name: pcc-db
     restart: unless-stopped
     tty: true
     ports:
@@ -54,12 +52,10 @@ services:
     networks:
       - app-network
 
-#Docker Networks
 networks:
   app-network:
     driver: bridge
 
-#Volumes
 volumes:
   dbdata:
     driver: local

@@ -48,7 +48,6 @@ The API will return either an error message or a result eg:
 
 Or:
 
-`{"input": [1,3,5,8,15,17]}`
 
 `{
     "result": "2,4,6-7,9-14,16,18-20"

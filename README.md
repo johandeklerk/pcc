@@ -46,4 +46,7 @@ The API will return either an error message or a result eg:
     "result": "2,4,6-7,9-14,16,18-20"
 }`
 
+With CURL:
+
+`curl -X POST -d "{\"input\": [1,3,5,8,15,17]}" -H "Content-type: application/json" http://localhost/api/filter`
 

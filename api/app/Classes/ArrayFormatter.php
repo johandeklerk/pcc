@@ -22,20 +22,20 @@ class ArrayFormatter
                 continue;
             }
 
-            if (($val - 1) != $diff[$key-1]) {
+            if (($val - 1) != $diff[$key - 1]) {
                 $output .= ','.$val;
             }
             else {
                 // Check if next value exists and if the next value does not equal one more than the current
                 // then output the "-value" string, otherwise ignore it
-                if (isset($diff[$key+1]) && $diff[$key+1] != ($val + 1)) {
+                if (isset($diff[$key + 1]) && $diff[$key + 1] != ($val + 1)) {
                     $output .= '-'.$val;
                 }
             }
         }
         
         // To deal with the last number, a bit ugly...
-        if (max($diff) != $max || (substr($output, strrpos($output, ',')+1) != max($diff))) {
+        if (max($diff) != $max || (substr($output, strrpos($output, ',') + 1) != max($diff))) {
             $output .= '-'.max($diff);
         }
 

@@ -16,7 +16,7 @@ Make sure you in the "api" directory:
 
 `docker-compose up -d`
 
-Assuming php, composer and yarn is installed on your local system:
+Assuming php, composer and npm/yarn is installed on your local system:
 
 `composer install`
 
@@ -24,7 +24,9 @@ Assuming php, composer and yarn is installed on your local system:
 
 `php artisan key:generate`
 
-`yarn install`
+`npm install`
+
+`npm run dev`
 
 Otherwise run the commands from within the container
 
@@ -56,3 +58,6 @@ With CURL:
 
 `curl -X POST -d "{\"input\": [1,3,5,8,15,17]}" -H "Content-type: application/json" http://localhost:9000/api/filter`
 
+### UI
+
+`docker build . -t pcc/client`

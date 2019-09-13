@@ -20,17 +20,19 @@ Assuming php, composer and yarn is installed on your local system:
 
 `composer install`
 
+`cp .env.example .env`
+
 `php artisan key:generate`
 
 `yarn install`
 
 Otherwise run the commands from within the container
 
-You can access the api at http://localhost, feel free to edit docker-compose.yml to change the ports to your liking
+You can access the api at http://localhost:9000, feel free to edit docker-compose.yml to change the ports to your liking
 
 ### API Usage
 
-Make an HTTP POST to http://localhost/api/filter
+Make an HTTP POST to http://localhost:9000/api/filter
 
 Set the Content-Type: application/json header
 
@@ -54,5 +56,5 @@ Or:
 
 With CURL:
 
-`curl -X POST -d "{\"input\": [1,3,5,8,15,17]}" -H "Content-type: application/json" http://localhost/api/filter`
+`curl -X POST -d "{\"input\": [1,3,5,8,15,17]}" -H "Content-type: application/json" http://localhost:9000/api/filter`
 
